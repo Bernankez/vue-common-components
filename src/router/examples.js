@@ -6,6 +6,14 @@ const examples = [
     meta: {
       title: 'topBar演示'
     }
+  },
+  {
+    path: '/examples/toggleButton',
+    name: 'toggleButtonPage',
+    component: () => import('@/views/examples/toggleButtonPage.vue'),
+    meta: {
+      title: 'toggleButton演示'
+    }
   }
 ]
 

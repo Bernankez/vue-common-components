@@ -4,6 +4,9 @@
       <router-link to="/examples/topBar">
         <ul>topBar</ul>
       </router-link>
+      <router-link to="/examples/toggleButton">
+        <ul>toggleButton</ul>
+      </router-link>
     </div>
   </div>
 </template>
