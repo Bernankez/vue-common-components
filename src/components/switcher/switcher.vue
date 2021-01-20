@@ -2,7 +2,8 @@
   <div class="__vcc-switcher"
     :style="`--button-width: ${width}; --button-height: ${height}; --toggle-diameter: ${toggleDiameter}; --toggle-wider: ${toggleWider}; --color-gray: ${switchColorOff}; --color-green: ${switchColorOn}; --color-dark-gray: ${switchColorOffDark}`">
     <label>
-      <input type="checkbox" v-model="checkedValue" :true-value="trueValue" :false-value="falseValue" />
+      <input :class="{'__vcc-switcher-checkbox':true, '__vcc-switcher-checkbox-enable':!disabled}" type="checkbox" v-model="checkedValue"
+        :disabled="disabled" :true-value="trueValue" :false-value="falseValue" />
       <span class="__vcc-switcher-bkg"></span>
     </label>
   </div>
@@ -56,6 +57,10 @@
       },
       value: {
         type: [Boolean, String, Number],
+        default: false,
+      },
+      disabled: {
+        type: Boolean,
         default: false,
       },
     },
@@ -115,11 +120,11 @@
       transition: 0.3s all ease-in-out;
     }
 
-    input[type="checkbox"]:checked + span {
+    .__vcc-switcher-checkbox:checked + span {
       background-color: var(--color-green);
     }
 
-    input[type="checkbox"]:checked + span::after {
+    .__vcc-switcher-checkbox:checked + span::after {
       transform: translateX(
         (
           calc(
@@ -132,15 +137,15 @@
         calc(var(--toggle-shadow-offset) * 4) rgba(0, 0, 0, 0.1);
     }
 
-    input[type="checkbox"] {
+    .__vcc-switcher-checkbox {
       display: none;
     }
 
-    input[type="checkbox"]:active + span::after {
+    .__vcc-switcher-checkbox-enable:active + span::after {
       width: var(--toggle-wider);
     }
 
-    input[type="checkbox"]:checked:active + span::after {
+    .__vcc-switcher-checkbox-enable:checked:active + span::after {
       transform: translateX(
         calc(
           var(--button-width) - var(--toggle-wider) - var(--button-toggle-offset)

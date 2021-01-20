@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <switcher v-model="checked" trueValue="1" falseValue="0"></switcher>
+    <switcher v-model="checked" trueValue="1" falseValue="0" :disabled="false"></switcher>
   </div>
 </template>
 

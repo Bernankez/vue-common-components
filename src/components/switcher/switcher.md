@@ -5,6 +5,7 @@
 |        参数        |                说明                 |           类型            | 可选值 |  默认值   |
 | :----------------: | :---------------------------------: | :-----------------------: | :----: | :-------: |
 |   v-model/value    |               绑定值                | [Boolean, String, Number] |   --   |   false   |
+|      disabled      |              是否禁用               |          Boolean          |   --   |   false   |
 |     trueValue      |        switch 开状态的绑定值        | [Boolean, String, Number] |   --   |   true    |
 |     falseValue     |        switch 关状态的绑定值        | [Boolean, String, Number] |   --   |   false   |
 |       width        |             switch 的宽             |          String           |   --   |  "80px"   |
