@@ -1,6 +1,6 @@
 <template>
   <div>
-    <top-bar></top-bar>
+    <top-bar title="测试标题" @onLeft="$router.go(-1)"></top-bar>
   </div>
 </template>
 
