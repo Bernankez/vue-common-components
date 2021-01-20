@@ -1,24 +1,9 @@
 # vue-common-components
 
-## Project setup
-```
-npm install
-```
+## switcher
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+file path: ./src/components/switcher/switcher.md
 
-### Compiles and minifies for production
-```
-npm run build
-```
+example: /example/switcher
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## topBar
