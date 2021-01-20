@@ -8,11 +8,11 @@ const examples = [
     }
   },
   {
-    path: '/examples/toggleButton',
-    name: 'toggleButtonPage',
-    component: () => import('@/views/examples/toggleButtonPage.vue'),
+    path: '/examples/switcher',
+    name: 'switcherPage',
+    component: () => import('@/views/examples/switcherPage.vue'),
     meta: {
-      title: 'toggleButton演示'
+      title: 'switcher演示'
     }
   }
 ]

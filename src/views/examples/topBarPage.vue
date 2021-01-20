@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import topBar from "@/components/topBar/topBar";
+  import topBar from "@/components/top-bar/top-bar";
 
   export default {
     name: "topBarPage",
