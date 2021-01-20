@@ -2,7 +2,7 @@
   <div class="__vcc-switcher"
     :style="`--button-width: ${width}; --button-height: ${height}; --toggle-diameter: ${toggleDiameter}; --toggle-wider: ${toggleWider}; --color-gray: ${switchColorOff}; --color-green: ${switchColorOn}; --color-dark-gray: ${switchColorOffDark}`">
     <label>
-      <input type="checkbox" />
+      <input type="checkbox" v-model="checkedValue" :true-value="trueValue" :false-value="falseValue" />
       <span class="__vcc-switcher-bkg"></span>
     </label>
   </div>
@@ -12,6 +12,11 @@
   export default {
     name: "switcher",
     components: {},
+    //改变v-model默认绑定属性、事件类型
+    model: {
+      prop: "value",
+      event: "change",
+    },
     props: {
       width: {
         type: String,
@@ -19,15 +24,15 @@
       },
       height: {
         type: String,
-        default: "47px",
+        default: "46px",
       },
       toggleDiameter: {
         type: String,
-        default: "41px",
+        default: "40px",
       },
       toggleWider: {
         type: String,
-        default: "53px",
+        default: "52px",
       },
       switchColorOff: {
         type: String,
@@ -41,10 +46,33 @@
         type: String,
         default: "#39393d",
       },
+      trueValue: {
+        type: [Boolean, String, Number],
+        default: true,
+      },
+      falseValue: {
+        type: [Boolean, String, Number],
+        default: false,
+      },
+      value: {
+        type: [Boolean, String, Number],
+        default: false,
+      },
     },
     data() {
-      return {};
+      return {
+        checkedValue: this.value,
+      };
     },
+    watch: {
+      checkedValue(newVal, oldVal) {
+        this.$emit("change", newVal);
+      },
+      value(newVal, oldVal) {
+        this.checkedValue = newVal;
+      },
+    },
+    methods: {},
   };
 </script>
 

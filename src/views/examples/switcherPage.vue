@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <switcher></switcher>
+    <switcher v-model="checked" trueValue="1" falseValue="0"></switcher>
   </div>
 </template>
 
@@ -10,6 +10,11 @@
   export default {
     name: "switcherPage",
     components: { switcher },
+    data() {
+      return {
+        checked: "1",
+      };
+    },
   };
 </script>
 
