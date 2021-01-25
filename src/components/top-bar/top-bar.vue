@@ -1,20 +1,22 @@
 <template>
-  <div class="__vcc-top-bar"
-    :style="`--bar-bkg: ${barBackColor}; --bar-height: ${barHeight}; --z-index: ${zIndex}; --color: ${fontColor}; --font-size: ${fontSize};`">
-    <span class="__vcc-top-bar-left" @click.stop="onLeft">
-      <slot name="bar-left">
-        <span v-if="isBackShow" class="__vcc-top-bar-arrow"></span>
-      </slot>
-    </span>
-    <span class="__vcc-top-bar-middle" @click.stop="onMiddle">
-      <slot name="bar-middle">{{title}}</slot>
-    </span>
-    <span class="__vcc-top-bar-right" @click.stop="onRight">
-      <slot name="bar-right">
-        <img v-if="image" class="__vcc-top-bar-img" :src="image" />
-      </slot>
-    </span>
-  </div>
+  <transition :name="animation ? '__vcc-top-bar-shade' : ''">
+    <div v-show="isBarShow" class="__vcc-top-bar"
+      :style="`--bar-bkg: ${barBackColor}; --bar-height: ${barHeight}; --z-index: ${zIndex}; --color: ${fontColor}; --font-size: ${fontSize};`">
+      <span class="__vcc-top-bar-left" @click.stop="onLeft">
+        <slot name="bar-left">
+          <span v-if="isBackShow" class="__vcc-top-bar-arrow"></span>
+        </slot>
+      </span>
+      <span class="__vcc-top-bar-middle" @click.stop="onMiddle">
+        <slot name="bar-middle">{{title}}</slot>
+      </span>
+      <span class="__vcc-top-bar-right" @click.stop="onRight">
+        <slot name="bar-right">
+          <img v-if="image" class="__vcc-top-bar-img" :src="image" />
+        </slot>
+      </span>
+    </div>
+  </transition>
 </template>
 
 <script>
@@ -30,7 +32,15 @@
         type: Object,
         default: null,
       },
+      isBarShow: {
+        type: Boolean,
+        default: true,
+      },
       isBackShow: {
+        type: Boolean,
+        default: true,
+      },
+      animation: {
         type: Boolean,
         default: true,
       },
@@ -132,5 +142,15 @@
         height: calc(var(--bar-height) * 0.47);
       }
     }
+  }
+
+  .__vcc-top-bar-shade-enter,
+  .__vcc-top-bar-shade-leave-to {
+    opacity: 0;
+  }
+
+  .__vcc-top-bar-shade-enter-active,
+  .__vcc-top-bar-shade-leave-active {
+    transition: all 0.2s ease-in-out 0s;
   }
 </style>

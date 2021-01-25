@@ -6,7 +6,9 @@
 | :----------: | :----------------------------------------------: | :-----: | :----: | :----: |
 |    title     |                       标题                       | String  |   --   |   ""   |
 |    image     | 标题栏右侧图片，需用 require("图片地址")方式引入 | Object  |   --   |  null  |
+|  isBarShow   |                  是否展示标题栏                  | Boolean |   --   |  true  |
 |  isBackShow  |                 是否展示返回按钮                 | Boolean |   --   |  true  |
+|  animation   |              是否启用标题栏消失动画              | Boolean |   --   |  true  |
 | barBackColor |                   标题栏背景色                   | String  |   --   | "#fff" |
 |  barHeight   |                    标题栏高度                    | String  |   --   | "45px" |
 |    zIndex    |                     z-index                      | String  |   --   | "999"  |
