@@ -1,6 +1,6 @@
 <template>
   <div>
-    <top-bar></top-bar>
+    <top-bar title="测试标题" :isBarShow="isBarShow" :animation="animation" @onLeft="$router.go(-1)"></top-bar>
   </div>
 </template>
 
@@ -10,6 +10,12 @@
   export default {
     name: "topBarPage",
     components: { topBar },
+    data() {
+      return {
+        isBarShow: true,
+        animation: true,
+      };
+    },
   };
 </script>
 
