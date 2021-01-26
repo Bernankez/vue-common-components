@@ -1,7 +1,6 @@
 <template>
   <transition :name="animation ? '__vcc-top-bar-shade' : ''">
-    <div v-show="isBarShow" class="__vcc-top-bar"
-      :style="`--bar-bkg: ${barBackColor}; --bar-height: ${barHeight}; --z-index: ${zIndex}; --color: ${fontColor}; --font-size: ${fontSize};`">
+    <div v-show="isBarShow" class="__vcc-top-bar" :style="topBarStyle">
       <span class="__vcc-top-bar-left" @click.stop="onLeft">
         <slot name="bar-left">
           <span v-if="isBackShow" class="__vcc-top-bar-arrow"></span>
@@ -66,7 +65,15 @@
       },
     },
     data() {
-      return {};
+      return {
+        topBarStyle: {
+          "--bar-bkg": this.barBackColor,
+          "--bar-height": this.barHeight,
+          "--z-index": this.zIndex,
+          "--color": this.fontColor,
+          "--font-size": this.fontSize,
+        },
+      };
     },
     methods: {
       onLeft() {
