@@ -1,6 +1,5 @@
 <template>
-  <div class="__vcc-switcher"
-    :style="`--button-width: ${width}; --button-height: ${height}; --toggle-diameter: ${toggleDiameter}; --toggle-wider: ${toggleWider}; --color-gray: ${switchColorOff}; --color-green: ${switchColorOn}; --color-dark-gray: ${switchColorOffDark}`">
+  <div class="__vcc-switcher" :style="switcherStyle">
     <label>
       <input :class="{'__vcc-switcher-checkbox':true, '__vcc-switcher-checkbox-enable':!disabled}" type="checkbox" v-model="checkedValue"
         :disabled="disabled" :true-value="trueValue" :false-value="falseValue" />
@@ -67,6 +66,15 @@
     data() {
       return {
         checkedValue: this.value,
+        switcherStyle: {
+          "--button-width": this.width,
+          "--button-height": this.height,
+          "--toggle-diameter": this.toggleDiameter,
+          "--toggle-wider": this.toggleWider,
+          "--color-gray": this.switchColorOff,
+          "--color-green": this.switchColorOn,
+          "--color-dark-gray": this.switchColorOffDark,
+        },
       };
     },
     watch: {
