@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <switcher v-model="checked" trueValue="1" falseValue="0" :disabled="false"></switcher>
+    <vcc-switcher v-model="checked" trueValue="1" falseValue="0" :disabled="false"></vcc-switcher>
   </div>
 </template>
 
@@ -9,7 +9,7 @@
 
   export default {
     name: "switcherPage",
-    components: { switcher },
+    components: { 'vcc-switcher': switcher },
     data() {
       return {
         checked: "1",

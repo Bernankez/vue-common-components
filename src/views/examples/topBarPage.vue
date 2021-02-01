@@ -1,6 +1,6 @@
 <template>
   <div>
-    <top-bar title="测试标题" :isBarShow="isBarShow" :animation="animation" @onLeft="$router.go(-1)"></top-bar>
+    <vcc-top-bar title="测试标题" :isBarShow="isBarShow" :animation="animation" @onLeft="$router.go(-1)"></vcc-top-bar>
   </div>
 </template>
 
@@ -9,7 +9,7 @@
 
   export default {
     name: "topBarPage",
-    components: { topBar },
+    components: { 'vcc-top-bar': topBar },
     data() {
       return {
         isBarShow: true,
