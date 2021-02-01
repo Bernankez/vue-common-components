@@ -10,7 +10,7 @@
 
 <script>
   export default {
-    name: "switcher",
+    name: "vcc-switcher",
     components: {},
     //改变v-model默认绑定属性、事件类型
     model: {
