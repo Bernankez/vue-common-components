@@ -14,6 +14,14 @@ const examples = [
     meta: {
       title: 'switcher演示'
     }
+  },
+  {
+    path: '/examples/skeleton',
+    name: 'skeletonPage',
+    component: () => import('@/views/examples/skeletonPage.vue'),
+    meta: {
+      title: 'skeleton演示'
+    }
   }
 ]
 

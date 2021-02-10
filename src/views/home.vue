@@ -7,6 +7,9 @@
       <router-link to="/examples/switcher">
         <el-button>switcher</el-button>
       </router-link>
+      <router-link to="/examples/skeleton">
+        <el-button>skeleton</el-button>
+      </router-link>
     </div>
   </div>
 </template>
@@ -23,10 +26,10 @@
 </script>
 
 <style lang="scss" scoped>
-.home_content{
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  box-sizing: border-box;
-}
+  .home_content {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+  }
 </style>
