@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <cyber-button></cyber-button>
+  <div class="page">
+    <cyber-button text="AVAILABLE NOW"></cyber-button>
   </div>
 </template>
 
@@ -10,8 +10,17 @@
   export default {
     name: "cyberButtonPage",
     components: { cyberButton },
+    data() {
+      return {};
+    },
   };
 </script>
 
 <style lang="scss" scoped>
+  .page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
 </style>
