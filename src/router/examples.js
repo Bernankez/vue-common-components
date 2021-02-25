@@ -14,6 +14,14 @@ const examples = [
     meta: {
       title: 'switcher演示'
     }
+  },
+  {
+    path: '/examples/cyberButton',
+    name: 'cyberButton',
+    component: () => import('@/views/examples/cyberButtonPage.vue'),
+    meta: {
+      title: 'cyberButton演示'
+    }
   }
 ]
 

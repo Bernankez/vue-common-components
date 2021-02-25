@@ -7,6 +7,9 @@
       <router-link to="/examples/switcher">
         <el-button>switcher</el-button>
       </router-link>
+      <router-link to="/examples/cyberButton">
+        <el-button>cyberButton</el-button>
+      </router-link>
     </div>
   </div>
 </template>
