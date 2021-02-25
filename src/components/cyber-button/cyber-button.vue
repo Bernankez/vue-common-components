@@ -3,7 +3,7 @@
     <link ref="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
-    <button @click="onClick">
+    <button @click="$emit('click')">
       {{text}}
     </button>
   </div>
@@ -29,11 +29,7 @@
         };
       },
     },
-    methods: {
-      onClick() {
-        this.$emit("click");
-      },
-    },
+    methods: {},
   };
 </script>
 
